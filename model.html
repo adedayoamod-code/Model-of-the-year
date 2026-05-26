@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Modeling of the Year</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#fff7fb;
+      color:#333;
+      line-height:1.6;
+    }
+
+    h1,h2,h3,h4{
+      font-family:'Cormorant Garamond',serif;
+      letter-spacing:.5px;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(135deg,#ffd6e7,#fff);
+      padding:100px 20px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      color:#c2185b;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:700px;
+      margin:auto;
+      color:#555;
+    }
+
+    /* MODELS */
+    .models{
+      padding:80px 0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+    }
+
+    .card{
+      background:white;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card h2{
+      font-size:2.2rem;
+      color:#c2185b;
+      margin-bottom:10px;
+    }
+
+    .bio{
+      margin-bottom:20px;
+      color:#666;
+    }
+
+    .highlights{
+      list-style:none;
+    }
+
+    .highlights li{
+      padding:10px 0;
+      border-bottom:1px solid #f3d4df;
+      color:#444;
+    }
+
+    /* GALLERY */
+    .gallery-section{
+      padding:40px 0 80px;
+    }
+
+    .gallery-title{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:3rem;
+      color:#c2185b;
+    }
+
+    .gallery-model{
+      margin-bottom:60px;
+    }
+
+    .gallery-model h3{
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#444;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:15px;
+    }
+
+    .gallery-grid img{
+      height:240px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:.3s;
+    }
+
+    .gallery-grid img:hover{
+      transform:scale(1.03);
+    }
+
+    /* ABOUT */
+    .about{
+      background:#ffeaf2;
+      padding:80px 20px;
+      text-align:center;
+    }
+
+    .about h2{
+      font-size:3rem;
+      color:#c2185b;
+      margin-bottom:20px;
+    }
+
+    .about p{
+      max-width:850px;
+      margin:auto;
+      font-size:1.1rem;
+      color:#555;
+    }
+
+    /* VOTING */
+    .vote{
+      padding:80px 20px;
+      text-align:center;
+    }
+
+    .vote h2{
+      font-size:3rem;
+      color:#c2185b;
+      margin-bottom:20px;
+    }
+
+    .vote p{
+      max-width:750px;
+      margin:0 auto 30px;
+      color:#555;
+    }
+
+    .btc-box{
+      background:white;
+      padding:25px;
+      border-radius:20px;
+      max-width:800px;
+      margin:20px auto;
+      box-shadow:0 5px 20px rgba(0,0,0,.08);
+      word-break:break-all;
+    }
+
+    .btc-box strong{
+      color:#c2185b;
+    }
+
+    .vote-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    button{
+      background:#c2185b;
+      color:white;
+      border:none;
+      padding:16px 30px;
+      border-radius:50px;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+      font-weight:600;
+    }
+
+    button:hover{
+      background:#a3154c;
+      transform:translateY(-2px);
+    }
+
+    .vote-count{
+      margin-top:30px;
+      font-size:1.1rem;
+      color:#444;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#c2185b;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      .gallery-title,
+      .about h2,
+      .vote h2{
+        font-size:2.3rem;
+      }
+
+      .card h2{
+        font-size:1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Best Modeling of the Year</h1>
+      <p>
+        Celebrating Grace, Style, and Outstanding Achievement in Modeling
+      </p>
+    </div>
+  </section>
+
+  <!-- MODEL CARDS -->
+  <section class="models">
+    <div class="container">
+      <div class="cards">
+
+        <!-- Ashley -->
+        <div class="card">
+          <img src="WhatsApp Image 2026-05-26 at 10.20.56 AM.jpeg" alt="Ashley Wilson">
+
+          <div class="card-content">
+            <h2>Ashley Wilson</h2>
+
+            <p class="bio">
+              Ashley Wilson is celebrated for her elegant runway presence,
+              editorial sophistication, and powerful fashion storytelling.
+              Her timeless beauty and modern aesthetic continue to inspire fans worldwide.
+            </p>
+
+            <ul class="highlights">
+              <li>✨ Featured in international runway showcases</li>
+              <li>✨ Editorial campaigns for luxury fashion magazines</li>
+              <li>✨ Collaborations with premium beauty and fashion brands</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Harper -->
+        <div class="card">
+          <img src="WhatsApp Image 2026-05-26 at 10.20.56 AM (1).jpeg" alt="Harper Madison">
+
+          <div class="card-content">
+            <h2>Harper Madison</h2>
+
+            <p class="bio">
+              Harper Madison is known for her confident style, bold editorial looks,
+              and dynamic presence in the modern modeling industry. She blends glamour
+              with authenticity on every stage.
+            </p>
+
+            <ul class="highlights">
+              <li>✨ Walked for emerging and elite fashion labels</li>
+              <li>✨ Published in trend-focused editorial features</li>
+              <li>✨ Partnered with lifestyle and luxury brands</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="container">
+
+      <h2 class="gallery-title">Model Galleries</h2>
+
+      <!-- Ashley Gallery -->
+      <div class="gallery-model">
+        <h3>Ashley Wilson</h3>
+
+        <div class="gallery-grid">
+          <img src="https://picsum.photos/400/500?1">
+          <img src="https://picsum.photos/400/500?2">
+          <img src="https://picsum.photos/400/500?3">
+          <img src="https://picsum.photos/400/500?4">
+          <img src="https://picsum.photos/400/500?5">
+          <img src="https://picsum.photos/400/500?6">
+        </div>
+      </div>
+
+      <!-- Harper Gallery -->
+      <div class="gallery-model">
+        <h3>Harper Madison</h3>
+
+        <div class="gallery-grid">
+          <img src="https://picsum.photos/400/500?7">
+          <img src="https://picsum.photos/400/500?8">
+          <img src="https://picsum.photos/400/500?9">
+          <img src="https://picsum.photos/400/500?10">
+          <img src="https://picsum.photos/400/500?11">
+          <img src="https://picsum.photos/400/500?12">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <h2>About the Award</h2>
+
+      <p>
+        The “Best Modeling of the Year” award recognizes extraordinary talent,
+        creativity, professionalism, and influence within the modeling industry.
+        This prestigious recognition honors models who demonstrate excellence
+        in runway performance, editorial artistry, brand representation,
+        and cultural impact throughout the year.
+      </p>
+    </div>
+  </section>
+
+  <!-- VOTING -->
+  <section class="vote">
+    <div class="container">
+
+      <h2>Paid Fan Voting</h2>
+
+      <p>
+        Fans can support their favorite model by purchasing votes.
+        Each vote costs <strong>$100</strong>, and fans may vote unlimited times.
+        Payment must be completed through the BTC wallet below before votes are counted.
+      </p>
+
+      <div class="btc-box">
+        <strong>BTC TAG:</strong><br><br>
+        bc1qs3t0r8krkj83rsekj2wqhx6fr2ffw0e404vfft
+      </div>
+
+      <div class="vote-buttons">
+        <button onclick="voteAshley()">
+          Vote Ashley Wilson
+        </button>
+
+        <button onclick="voteHarper()">
+          Vote Harper Madison
+        </button>
+      </div>
+
+      <div class="vote-count">
+        <p>Ashley Wilson Votes: <span id="ashleyVotes">0</span></p>
+        <p>Harper Madison Votes: <span id="harperVotes">0</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Best Modeling of the Year — Celebrating Excellence in Fashion & Modeling
+  </footer>
+
+  <script>
+    let ashleyVotes = 0;
+    let harperVotes = 0;
+
+    function voteAshley(){
+      ashleyVotes++;
+      document.getElementById('ashleyVotes').innerText = ashleyVotes;
+
+      alert(
+        "Thank you for supporting Ashley Wilson!\\n\\n" +
+        "Please complete your $100 BTC payment to:\\n\\n" +
+        "bc1qs3t0r8krkj83rsekj2wqhx6fr2ffw0e404vfft"
+      );
+    }
+
+    function voteHarper(){
+      harperVotes++;
+      document.getElementById('harperVotes').innerText = harperVotes;
+
+      alert(
+        "Thank you for supporting Harper Madison!\\n\\n" +
+        "Please complete your $100 BTC payment to:\\n\\n" +
+        "bc1qs3t0r8krkj83rsekj2wqhx6fr2ffw0e404vfft"
+      );
+    }
+  </script>
+
+</body>
+</html>
